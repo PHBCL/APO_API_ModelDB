@@ -58,21 +58,21 @@ public class Usuario {
 	@Column(name="CAR_FOLDER")
 	private String carFolder;
 	
-	@Column(name="CAR_MOTOR")
-	private String carMotor;
-	
 	
 	@ManyToOne
 	@JoinColumn(name="COD_ROL")
 	@Cascade({CascadeType.PERSIST})
 	private Rol rol;
 
-	@Column(name="ESSUBSCRIPTOR")
-	private int esSubscripcion;
+	//0=no.1=si
+	@Column(name="esSUBSCRIPTOR")
+	private int esSubscriptor;
+	
+	
 	
 	public Usuario(){}
 	
-	public Usuario(String nombre,String apellido,String usuario,String contrasena,String email,String token, Rol rol, int esSubscripcion){
+	public Usuario(String nombre,String apellido,String usuario,String contrasena,String email,String token, Rol rol, int esSubscriptor){
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.usuario = usuario;
@@ -81,29 +81,13 @@ public class Usuario {
 		this.email = email;
 		this.token = token;
 		this.rol = rol;
-		this.esSubscripcion = esSubscripcion;
+		this.esSubscriptor = esSubscriptor; 
 	}
 	
 	
 	
 	
 	
-	public String getCarMotor() {
-		return carMotor;
-	}
-
-	public void setCarMotor(String carMotor) {
-		this.carMotor = carMotor;
-	}
-
-	public int getEsSubscripcion() {
-		return esSubscripcion;
-	}
-
-	public void setEsSubscripcion(int esSubscripcion) {
-		this.esSubscripcion = esSubscripcion;
-	}
-
 	public String getCarFolder() {
 		return carFolder;
 	}
@@ -184,4 +168,13 @@ public class Usuario {
 		this.token = token;
 	}
 
+	public int getEsSubscriptor() {
+		return esSubscriptor;
+	}
+
+	public void setEsSubscriptor(int esSubscriptor) {
+		this.esSubscriptor = esSubscriptor;
+	}
+
+	
 }

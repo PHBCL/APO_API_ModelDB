@@ -33,7 +33,7 @@ public class ConfiguracionPlantilla {
 	private ReglaVariable reglaVariable;
 	
 	@OneToOne
-	@JoinColumn(name="COD_TIPO_CONDICION")
+	@JoinColumn(name="COD_TIPO")
 	@Cascade({CascadeType.PERSIST})
 	private TipoCondicion tipoCondicion;
 

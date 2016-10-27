@@ -23,8 +23,8 @@ public class Promocion {
 
 	@Id
 	@Column(name="COD_PROMOCION")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "confPlantillaSeq")
-	@javax.persistence.SequenceGenerator(name="confPlantillaSeq", sequenceName = "SEQ_CONFIGURACION_PLANTILLA", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "promSeq")
+	@javax.persistence.SequenceGenerator(name="promSeq", sequenceName = "SEQ_PROMOCION", allocationSize = 1)
 	private int codPromocion;
 	
 	@Column(name="NOMBRE_PROMOCION")

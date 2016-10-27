@@ -1,6 +1,5 @@
 package com.apo.model;
 
-import java.util.Calendar;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -10,15 +9,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
-import org.hibernate.annotations.ManyToAny;
 import org.springframework.format.annotation.DateTimeFormat;
 
 
@@ -58,6 +54,9 @@ public class Usuario {
 	@Column(name="CAR_FOLDER")
 	private String carFolder;
 	
+
+	@Column(name="CAR_MOTOR")
+	private String carMotor;
 	
 	@ManyToOne
 	@JoinColumn(name="COD_ROL")
@@ -176,5 +175,12 @@ public class Usuario {
 		this.esSubscriptor = esSubscriptor;
 	}
 
+	public String getCarMotor() {
+		return carMotor;
+	}
+
+	public void setCarMotor(String carMotor) {
+		this.carMotor = carMotor;
+	}
 	
 }
